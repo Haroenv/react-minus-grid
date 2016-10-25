@@ -1,6 +1,6 @@
 # Minus minus grid | React.js
 
-A simple wrapper around the [Minus minus Grid](https.//github.com/pixelass/minus-grid)
+A simple wrapper around the [Minus minus Grid](https://github.com/pixelass/minus-grid)
 
 [Documentation](https://pixelass.github.io/react-minus-grid/api/)  
 [Demo](https://pixelass.github.io/react-minus-grid/)

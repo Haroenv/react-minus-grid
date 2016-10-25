@@ -2,8 +2,8 @@
 
 A simple wrapper around the [Minus minus Grid](https.//github.com/pixelass/minus-grid)
 
-[Documentation](https://pixelass.github.io/react-minus-grid/api)  
-[Demo](https://pixelass.github.io/react-minus-grid)
+[Documentation](https://pixelass.github.io/react-minus-grid/api/)  
+[Demo](https://pixelass.github.io/react-minus-grid/)
 
 [![npm](https://img.shields.io/npm/v/react-minus-grid.svg)](https://www.npmjs.com/package/react-minus-grid)
 [![Coveralls branch](https://img.shields.io/coveralls/pixelass/react-minus-grid.svg)](https://coveralls.io/github/pixelass/react-minus-grid)

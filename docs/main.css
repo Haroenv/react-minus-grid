@@ -1,0 +1,156 @@
+/********************************************
+*  Defaults                                    *
+********************************************/
+/**
+ * defaults are set inside the selector to prevent post-css
+ * from trying to resolve these variables.
+ */
+._src_minus_grid__grid {
+  --column-count: 4;
+  --column-margin: 12;
+  --column-padding: 16;
+}
+
+/********************************************
+*  LOGIC                                    *
+********************************************/
+/**
+ * `.grid` and `.row follow the same flexbox logic
+ */
+._src_minus_grid__grid,
+._src_minus_grid__row {
+  /**
+   * Box model for columns
+   * (1): create flexbox
+   * (2): ensure direction row
+   * (3): allow wrapping
+   * (4): ensure full width
+   */
+  /* (1) */
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  /* (2) */
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+  /* (3) */
+  -ms-flex-wrap: wrap !important;
+      flex-wrap: wrap !important;
+  /* (2, 3) */
+  -ms-flex-flow: row wrap !important;
+      flex-flow: row wrap !important;
+  /* (4) */
+  -webkit-box-flex: 0 !important;
+      -ms-flex: 0 0 100% !important;
+          flex: 0 0 100% !important;
+}
+
+/**
+ * A row resets margin and padding.
+ * It sets the columns to the current colspan
+ */
+._src_minus_grid__row {
+  --column-count: var(--colspan-iHiQIMRWLT);
+  /**
+   * Box model for columns
+   * (1): ensure horizontal padding to be 0
+   * (2): reset margins and paddings
+   */
+  /* (1) */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  /* (2) */
+  margin-left: calc((var(--column-padding) + var(--column-margin)) * -1px) !important;
+  margin-right: calc((var(--column-padding) + var(--column-margin)) * -1px) !important;
+}
+
+/**
+ * A `.column` provides margin and padding.
+ * It allows changing the size via inline styles
+ * @example
+ * style="--m: 4; --l: 6"
+ */
+._src_minus_grid__column {
+  /**
+   * colspan:
+   * @default --viewport-small
+   */
+  --colspan-iHiQIMRWLT: var(--viewport-small);
+  /**
+   * each property defaults to the previous value
+   * The first property defaults to 1
+   */
+  --viewport-small: 1;
+  --viewport-medium: var(--viewport-small);
+  --viewport-large: var(--viewport-medium);
+  /**
+   * Box model for columns
+   * (1): ensure border-box
+   * (2): set paddings
+   * (3): set margins
+   * (4): width based on properties
+   */
+  /* (1) */
+  box-sizing: border-box !important;
+  /* (2) */
+  padding-left: calc(var(--column-padding) * 1px) !important;
+  padding-right: calc(var(--column-padding) * 1px) !important;
+  /* (3) */
+  margin-right: calc(var(--column-margin) * 1px) !important;
+  margin-left: calc(var(--column-margin) * 1px) !important;
+  /* (4) */
+  width: calc(100% / var(--column-count) * var(--colspan-iHiQIMRWLT) - var(--column-margin) * 2px) !important;
+}
+
+/********************************************
+*  RESPONSIVE                               *
+********************************************/
+/**
+   * breakpoint for --viewport-small
+   * (1) set column count on grid to --column-count
+   * (2) set colspan to --viewport-small
+   */
+@media (min-width: 320px) {
+  ._src_minus_grid__grid {
+    /* (1) */
+    --column-count: 4;
+  }
+  ._src_minus_grid__column {
+    /* (2) */
+    --colspan-iHiQIMRWLT: var(--viewport-small);
+  }
+}
+
+/**
+   * breakpoint for --viewport-medium
+   * (1) set column count on grid to --column-count
+   * (2) set colspan to --viewport-medium
+   */
+@media (min-width: 480px) {
+  ._src_minus_grid__grid {
+    /* (1) */
+    --column-count: 8;
+  }
+  ._src_minus_grid__column {
+    /* (2) */
+    --colspan-iHiQIMRWLT: var(--viewport-medium);
+  }
+}
+
+/**
+   * breakpoint for --viewport-large
+   * (1) set column count on grid to --column-count
+   * (2) set colspan to --viewport-large
+   */
+@media (min-width: 800px) {
+  ._src_minus_grid__grid {
+    /* (1) */
+    --column-count: 12;
+  }
+  ._src_minus_grid__column {
+    /* (2) */
+    --colspan-iHiQIMRWLT: var(--viewport-large);
+  }
+}

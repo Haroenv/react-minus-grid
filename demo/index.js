@@ -1,10 +1,3 @@
-# Minus minus grid | React.js
-
-A simple wrapper around the [Minus minus Grid](https.//github.com/pixelass/minus-grid)
-
-
-```jsx
-
 import React from 'react'
 import {render} from 'react-dom'
 import {Grid, Column, Row} from '../src'
@@ -37,6 +30,3 @@ const App = () => {
 
 const mountPoint = document.getElementById('mountPoint')
 render(<App/>, mountPoint)
-
-```
-

@@ -1,7 +1,7 @@
 {
-  "name": "npm-boilerplate",
+  "name": "react-miuns-grid",
   "version": "1.0.0",
-  "description": "",
+  "description": "A react wrapper around the minus minus grid",
   "main": "index.js",
   "scripts": {
     "babel": "babel src --out-dir lib",
@@ -21,15 +21,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pixelass/npm-boilerplate.git"
+    "url": "git+https://github.com/pixelass/react-minus-grid.git"
   },
-  "keywords": [],
+  "keywords": [
+    "grid",
+    "row",
+    "column",
+    "react",
+    "css variables",
+    "mediaqueries",
+    "scope",
+    "inline-style"
+  ],
   "author": "Gregor Adams <greg@pixelass.com> (http://pixelass.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pixelass/npm-boilerplate/issues"
+    "url": "https://github.com/pixelass/react-minus-grid/issues"
   },
-  "homepage": "https://github.com/pixelass/npm-boilerplate#readme",
+  "homepage": "https://github.com/pixelass/react-minus-grid#readme",
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^15.3.2",
